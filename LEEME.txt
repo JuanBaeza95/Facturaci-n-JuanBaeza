@@ -1,0 +1,73 @@
+SISTEMA DE REGISTRO DE PRODUCTOS
+================================
+
+Este proyecto implementa un sistema de registro de productos con validaciones tanto del lado del cliente como del servidor.
+
+Requisitos del Sistema
+---------------------
+- PHP 8.4.4 o superior
+- MySQL 10.4.32 o superior
+- Servidor web (Apache/XAMPP recomendado)
+
+Configuración
+-----------
+1.Copiar código del archivo "BD_registro_productos.sql" y ejecutar en MySQLworkbench para crear la Base de Datos
+*Opcional (Adaptar codigo para Postgresql)
+Instalación
+-----------
+1. Copiar todos los archivos del proyecto en el directorio web de su servidor:
+   - index.php
+   - guardar.php
+   - obtener_sucursales.php
+   - validaciones.js
+   - styles.css
+
+2. Configurar la conexión a la base de datos:
+   - En los archivos PHP, verificar y ajustar si es necesario:
+     * host = "localhost"
+     * dbname = "registro_productos"
+     * user = "root"
+     * password = ""
+
+Estructura de Archivos
+---------------------
+- index.php: Formulario principal y conexión inicial a la BD
+- guardar.php: Procesamiento y validación del formulario
+- obtener_sucursales.php: API para carga dinámica de sucursales
+- validaciones.js: Validaciones del lado del cliente y llamadas AJAX
+- styles.css: Estilos y diseño del formulario
+
+Funcionalidades
+--------------
+1. Registro de productos con los siguientes campos:
+   - Código (alfanumérico, único)
+   - Nombre
+   - Bodega y Sucursal (carga dinámica)
+   - Moneda y Precio
+   - Materiales (mínimo 2)
+   - Descripción
+
+2. Validaciones implementadas:
+   - Código: 5-15 caracteres, alfanumérico, único
+   - Nombre: 2-50 caracteres
+   - Precio: Número positivo con hasta 2 decimales
+   - Materiales: Mínimo 2 selecciones
+   - Descripción: 10-1000 caracteres
+
+3. Características especiales:
+   - Carga dinámica de sucursales según bodega seleccionada
+   - Validación en tiempo real del código de producto
+   - Interfaz responsiva y amigable
+
+Uso del Sistema
+--------------
+1. Acceder al sistema mediante el navegador:
+   http://localhost/[carpeta-del-proyecto]/index.php
+
+2. Completar el formulario siguiendo las validaciones indicadas
+
+3. El sistema mostrará mensajes de éxito o error según corresponda
+
+Notas Adicionales
+----------------
+- El sistema utiliza AJAX para validaciones y carga dinámica de datos
